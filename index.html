@@ -17,31 +17,57 @@
         <option value="+">Adição</option>
          <option value="-">Subtração</option>
           <option value="x">Multiplicação</option>
-            <option value="x">Divisão</option>
+            <option value="/">Divisão</option>
         <input type="button" value="Calcular" onclick="calcular()">
+        <div id="saida"></div>
         <script>
-            function calcular() {
+function calcular() {
+  var num = Number(document.getElementById("num").value)
+  var selecao = document.getElementById("selecao").value
+  var saida = document.getElementById("saida")
+  var resultado = ''
+
+
+  for (var i = 1; i <= 10; i++) {
+    if (selecao[0] == '+') {
+      resultado += i + '+' + num + ' = ' + (i + num) + '<br>'
+      saida.innerHTML = resultado
+    } else if(selecao[0] == '-') {
+        resultado += i + '-' + num + ' = ' + (i - num) + '<br>'
+        saida.innerHTML = resultado
+    } else if(selecao[0] == 'x') {
+        resultado += i + 'x' + num + ' = ' + (i * num) + '<br>'
+        saida.innerHTML = resultado
+    } else {
+        resultado += i + '/' + num + ' = ' + (i / num) + '<br>'
+        saida.innerHTML = resultado
+    }
+  }  
+}
+
+            
+/*            function calcular() {
                 var num = Number(document.getElementById("num").value)
                 var selecao = document.getElementById("selecao").value
-                if (selecao = "Adição") {
+                if (selecao[0] == "+") {
                     //soma
-                    for (var c = 1; c < 11; c++) {
+                    for (var c = 1; c <= 10; c++) {
                         var resultado = c + num
                         var fraseresultado = document.write(c + " + " + num + " = " + resultado)
                         document.write("<br>")
                         fraseresultado
                     }
-                } else if (selecao = "Subtração") {
+                } else if (selecao[0] == "-") {
                     //subtração
-                    for (var c = 1; c < 11; c++) {
+                    for (var c = 1; c <= 10; c++) {
                         var resultado = c - num
                         var fraseresultado = document.write(c + " - " + num + " = " + resultado)
                         document.write("<br>")
                         fraseresultado
                     }
-                } else if (selecao = "Divisão") {
+                } else if (selecao[0] == "/") {
                     //divisão
-                    for (var c = 1; c < 11; c++) {
+                    for (var c = 1; c <= 10; c++) {
                         var resultado = c / num
                         var fraseresultado = document.write(c + " / " + num + " = " + resultado)
                         document.write("<br>")
@@ -49,7 +75,7 @@
                     }
                 } else {
                     //multiplicação
-                    for (var c = 1; c < 11; c++) {
+                    for (var c = 1; c <= 10; c++) {
                         var resultado = c * num
                         var fraseresultado = document.write(c + " x " + num + " = " + resultado)
                         document.write("<br>")
@@ -57,7 +83,7 @@
                     }
                 }
 
-            }
+            }*/
         </script>
 </body>
 
