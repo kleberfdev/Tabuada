@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+    <h1>Descubra Sua Tabuada</h1>
+
+</head>
+
+<body>
+    <input type="number" id="num" placeholder="Digite o Número">
+    <input type="button" value="Calcular" onclick="calcular()">
+    <script>
+        function calcular() {
+            var num = document.getElementById("num").value
+            //soma
+            for (var c = 1; c < 11; c++) {
+                var resultado = c + num
+                var fraseresultado = document.write(c + " + " + num + " = " + resultado)
+                document.write("<br>")
+                fraseresultado
+            }
+            //subtração
+            for (var c = 1; c < 11; c++) {
+                var resultado = c - num
+                var fraseresultado = document.write(c + " - " + num + " = " + resultado)
+                document.write("<br>")
+                fraseresultado
+            }
+            //divisão
+            for (var c = 1; c < 11; c++) {
+                var resultado = c / num
+                var fraseresultado = document.write(c + " / " + num + " = " + resultado)
+                document.write("<br>")
+                fraseresultado
+            }
+            //multiplicação
+            for (var c = 1; c < 11; c++) {
+                var resultado = c * num
+                var fraseresultado = document.write(c + " x " + num + " = " + resultado)
+                document.write("<br>")
+                fraseresultado
+            }
+
+        }
+    </script>
+</body>
+
+</html>
