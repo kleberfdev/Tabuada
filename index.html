@@ -11,42 +11,54 @@
 </head>
 
 <body>
-    <input type="number" id="num" placeholder="Digite o Número">
-    <input type="button" value="Calcular" onclick="calcular()">
-    <script>
-        function calcular() {
-            var num = document.getElementById("num").value
-            //soma
-            for (var c = 1; c < 11; c++) {
-                var resultado = c + num
-                var fraseresultado = document.write(c + " + " + num + " = " + resultado)
-                document.write("<br>")
-                fraseresultado
-            }
-            //subtração
-            for (var c = 1; c < 11; c++) {
-                var resultado = c - num
-                var fraseresultado = document.write(c + " - " + num + " = " + resultado)
-                document.write("<br>")
-                fraseresultado
-            }
-            //divisão
-            for (var c = 1; c < 11; c++) {
-                var resultado = c / num
-                var fraseresultado = document.write(c + " / " + num + " = " + resultado)
-                document.write("<br>")
-                fraseresultado
-            }
-            //multiplicação
-            for (var c = 1; c < 11; c++) {
-                var resultado = c * num
-                var fraseresultado = document.write(c + " x " + num + " = " + resultado)
-                document.write("<br>")
-                fraseresultado
-            }
 
-        }
-    </script>
+    <input type="number" id="num" placeholder="Digite o Número">
+    <select id="selecao">
+        <option value="+">Adição</option>
+         <option value="-">Subtração</option>
+          <option value="x">Multiplicação</option>
+            <option value="x">Divisão</option>
+        <input type="button" value="Calcular" onclick="calcular()">
+        <script>
+            function calcular() {
+                var num = Number(document.getElementById("num").value)
+                var selecao = document.getElementById("selecao").value
+                if (selecao = "Adição") {
+                    //soma
+                    for (var c = 1; c < 11; c++) {
+                        var resultado = c + num
+                        var fraseresultado = document.write(c + " + " + num + " = " + resultado)
+                        document.write("<br>")
+                        fraseresultado
+                    }
+                } else if (selecao = "Subtração") {
+                    //subtração
+                    for (var c = 1; c < 11; c++) {
+                        var resultado = c - num
+                        var fraseresultado = document.write(c + " - " + num + " = " + resultado)
+                        document.write("<br>")
+                        fraseresultado
+                    }
+                } else if (selecao = "Divisão") {
+                    //divisão
+                    for (var c = 1; c < 11; c++) {
+                        var resultado = c / num
+                        var fraseresultado = document.write(c + " / " + num + " = " + resultado)
+                        document.write("<br>")
+                        fraseresultado
+                    }
+                } else {
+                    //multiplicação
+                    for (var c = 1; c < 11; c++) {
+                        var resultado = c * num
+                        var fraseresultado = document.write(c + " x " + num + " = " + resultado)
+                        document.write("<br>")
+                        fraseresultado
+                    }
+                }
+
+            }
+        </script>
 </body>
 
 </html>
