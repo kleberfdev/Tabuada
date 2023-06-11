@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>tudo list</title>
+</head>
+<style type="text/css">
+body {
+text-align:center;
+background:black;
+color:white;
+font-size:20px;
+}
+#container {
+display:flex;
+justify-content:center;
+text-align:center;
+}
+#tudoList {
+display:block;
+margin:10px;
+}
+
+.class_div{
+display:flex;
+text-align:center;
+justify-content:center;
+}
+.class_li{
+margin:10px;
+list-style:none;
+
+
+}
+</style>
+<body>
+<h1> Tudo List </h1>
+<hr>
+<h3> faça uma breve descrição de Um item da sua lista e aperte em Adicionar</h3>
+<br>
+<p>Digite Uma Tarefa</p>
+
+<input type="text" id="tudoInput" required="required" >
+<button onclick="calc()">Adicionar</button>
+<br><br>
+<hr>
+
+<div id="container" >
+<ul id="tudoList" >
+
+</ul>
+
+</div>
+
+<script type="text/javascript">
+
+
+function calc(){
+
+// capturado elementos da pagina
+let tudoInput = document.getElementById("tudoInput")
+let tudoList = document.getElementById("tudoList")
+
+
+
+// funcao que add na lista e salvar
+let tudoDiv = document.createElement("div")
+tudoDiv.classList.add("class_div")
+let tudoLi = document.createElement("li")
+tudoLi.classList.add("class_li")
+
+tudoLi.innerText = tudoInput.value
+
+// limpar campos
+tudoInput.value = ""
+tudoInput.focus()
+
+//funcao remover
+let removerBtn = document.createElement("button")
+removerBtn.innerText = "Remover"
+removerBtn.onclick = function(){
+    this.parentNode.remove() 
+}
+
+//funcao editar
+let editarBtn = document.createElement("button")
+editarBtn.innerText = "Editar"
+editarBtn.onclick = function(){
+    let novoTexto = prompt("Digite o novo texto:")
+    if(novoTexto !== null){
+        tudoLi.innerText = novoTexto
+    }
+}
+
+//adicionar os botões
+tudoDiv.appendChild(tudoLi)
+tudoDiv.appendChild(editarBtn)
+tudoDiv.appendChild(removerBtn)
+
+tudoList.appendChild(tudoDiv)
+
+}
+
+
+
+</script>
+</body>
+</html>
